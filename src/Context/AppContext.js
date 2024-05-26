@@ -8,7 +8,7 @@ function AppContextProvider({children}){
     const [page , setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(null);
     const [posts , setPosts] = useState([]);
-}
+
 
 async function fetchBlogPosts(page = 1){
     setLoading(true)
@@ -29,7 +29,7 @@ async function fetchBlogPosts(page = 1){
     setLoading(false);
 }
 
-function handlerPageChange(){
+function handlerPageChange(page){
     setPage(page);
     fetchBlogPosts(page);
 }
@@ -47,15 +47,6 @@ return <AppContext.Provider value={value}>
     {children}
 </AppContext.Provider>
 
-
-
-
-
-
-
-
-
-
-
+}
 
 export default AppContextProvider;
