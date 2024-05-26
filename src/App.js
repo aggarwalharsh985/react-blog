@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     fetchBlogPosts()
-  },[]);
+  },[fetchBlogPosts]);
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center gap-x-1">
